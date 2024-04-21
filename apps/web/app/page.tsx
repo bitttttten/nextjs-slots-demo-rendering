@@ -7,6 +7,9 @@ export default function Page() {
       <p>
         <Link href="/studio">Studio LP</Link>
       </p>
+      <p>
+        <Link href="/some-other-page">Some other page (not studio)</Link>
+      </p>
     </main>
   );
 }
