@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function Page() {
   return (
     <main>
-      <h1>Home page</h1>
+      <h1>Studio LP page</h1>
       <p>
-        <Link href="/studio">Studio LP</Link>
+        <Link href="/">Home</Link>
       </p>
     </main>
   );

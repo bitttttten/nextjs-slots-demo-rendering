@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,12 +12,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  menuloggedin,
+  menuloggedout,
 }: {
   children: React.ReactNode;
+  menuloggedin: React.ReactNode;
+  menuloggedout: React.ReactNode;
 }): JSX.Element {
+  const headerList = headers();
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {headerList.has("x-cf-logged-in") ? menuloggedin : menuloggedout}
+        {children}
+      </body>
     </html>
   );
 }
